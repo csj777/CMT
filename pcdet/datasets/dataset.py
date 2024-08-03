@@ -10,7 +10,7 @@ from ..utils import common_utils
 from .augmentor.data_augmentor import DataAugmentor
 from .processor.data_processor import DataProcessor
 from .processor.point_feature_encoder import PointFeatureEncoder
-from ..utils import common_utils, box_utils, self_training_utils, self_training_utils_mine
+from ..utils import common_utils, box_utils, self_training_utils
 from ..ops.roiaware_pool3d import roiaware_pool3d_utils
 from pcdet.config import cfg
 
@@ -152,28 +152,8 @@ class DatasetTemplate(torch_data.Dataset):
         fov_gt_mask = ((np.abs(gt_angle) < half_fov_degree) & (gt_boxes_lidar[:, 0] > 0))
         return fov_gt_mask
 
-    # def fill_pseudo_labels(self, input_dict):
-    #     ps_boxes = self_training_utils.load_ps_label(input_dict['frame_id'])
-    #     ps_scores = ps_boxes[:, 8]
-    #     ps_classes = ps_boxes[:, 7]
-    #     ps_boxes = ps_boxes[:, :7]
-
-    #     # only suitable for only one classes, generating ps_names for prepare data
-    #     ps_names = np.array([self.class_names[0] for n in ps_boxes])
-
-
-    #     input_dict['gt_boxes'] = ps_boxes
-    #     input_dict['gt_names'] = ps_names
-    #     input_dict['gt_classes'] = ps_classes
-    #     input_dict['gt_scores'] = ps_scores
-    #     input_dict['pos_ps_bbox'] = (ps_classes > 0).sum()
-    #     input_dict['ign_ps_bbox'] = ps_boxes.shape[0] - input_dict['pos_ps_bbox']
-    #     input_dict.pop('num_points_in_gt', None)
     def fill_pseudo_labels(self, input_dict):
-        if cfg.get('SELF_TRAIN', None) and cfg.SELF_TRAIN.get('MINE', None):
-            gt_boxes = self_training_utils_mine.load_ps_label(input_dict['frame_id'])
-        else:
-            gt_boxes = self_training_utils.load_ps_label(input_dict['frame_id'])
+        gt_boxes = self_training_utils.load_ps_label(input_dict['frame_id'])
         gt_scores = gt_boxes[:, 8]
         gt_classes = gt_boxes[:, 7]
         gt_boxes = gt_boxes[:, :7]
