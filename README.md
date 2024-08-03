@@ -51,6 +51,8 @@ Please refer to [GETTING_STARTED.md](docs/GETTING_STARTED.md) to learn more usag
 
 ## Citation
 
+If you find this project useful in your research, please consider cite our paper.
+
 ## Acknowledgement
 
 Our code is heavily based on [OpenPCDet](https://github.com/open-mmlab/OpenPCDet), [ST3D](https://github.com/CVMI-Lab/ST3D), [DTS](https://github.com/WoodwindHu/DTS). Thanks for their awesome codebase.
