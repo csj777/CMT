@@ -1,5 +1,5 @@
 # CMT
-Code release for the paper **CMT: Co-training Mean-Teacher for Unsupervised Domain Adaptation on 3D Object Detection**, ACM MM 2024.
+Code release for the paper **CMT: Co-training Mean-Teacher for Unsupervised Domain Adaptation on 3D Object Detection**, ACM MM 2024. The codebase is still under updating.
 <!-- CMT is an unsupervised domain adaption method on 3D object detection, which is accepted on ACM MM 2024. -->
 
 <!-- > [**Co-training Mean-Teacher for Unsupervised Domain Adaptation on 3D Object Detection**] -->
