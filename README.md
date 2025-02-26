@@ -52,6 +52,15 @@ Please refer to [GETTING_STARTED.md](docs/GETTING_STARTED.md) to learn more usag
 ## Citation
 
 If you find this project useful in your research, please consider cite our paper.
+```
+@inproceedings{chen2024cmt,
+  title={CMT: Co-training Mean-Teacher for Unsupervised Domain Adaptation on 3D Object Detection},
+  author={Chen, Shijie and Zhuo, Junbao and Li, Xin and Liu, Haizhuang and Wang, Rongquan and Chen, Jiansheng and Ma, Huimin},
+  booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
+  pages={4738--4747},
+  year={2024}
+}
+```
 
 ## Acknowledgement
 
